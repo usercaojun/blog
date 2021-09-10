@@ -73,13 +73,24 @@ WSGI_APPLICATION = 'blog.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/2.2/ref/settings/#databases
 
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+#     }
+# }
+
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+    'default':
+    {
+        'ENGINE': 'django.db.backends.mysql',     # 数据库引擎
+        'NAME': 'itheima_blog', 	# 数据库名称
+        'HOST': '127.0.0.1', 	    # 数据库地址，本机 ip 地址 127.0.0.1
+        'PORT': 3306, 		        # 端口
+        'USER': 'itheima', 	        # 数据库用户名
+        'PASSWORD': '123456',	    # 数据库密码
     }
 }
-
 
 # Password validation
 # https://docs.djangoproject.com/en/2.2/ref/settings/#auth-password-validators
